@@ -10,7 +10,7 @@ from aiogram.enums import ParseMode
 
 from config.settings import settings
 from app.database import init_db
-from app.handlers import start, questionnaire, duel
+from app.handlers import start, questionnaire
 from app.middlewares.db import DbSessionMiddleware
 
 
@@ -42,7 +42,6 @@ async def main():
     # Register routers
     dp.include_router(start.router)
     dp.include_router(questionnaire.router)
-    dp.include_router(duel.router)
     
     # Start bot
     logger.info("Starting bot...")
